@@ -1,22 +1,14 @@
-# User API with Flask, MySQL and Docker
+# User API - Basic RESTful Flask Application
 
-This is a full CRUD REST API built with **Flask** and **MySQL**, containerized using **Docker** and **Docker Compose**. It demonstrates professional practices such as:
-
-- Modular Flask application structure
-- Input validation
-- Docker-based multi-service architecture
-- Database auto-initialization with sample data
+This project is a simple REST API built with **Flask** that demonstrates the fundamental structure of a backend application using Python. It is intended as a starter project and does not use Docker or an external database.
 
 ---
 
 ## 📦 Tech Stack
 
 - Python 3.10
-- Flask 3.1.1
-- MySQL 8.0
-- Docker & Docker Compose
-- SQL for DB bootstrap
-- Manual testing with `curl` or Postman
+- Flask 3.x
+- (Optional) SQLite for local persistence
 
 ---
 
@@ -24,56 +16,66 @@ This is a full CRUD REST API built with **Flask** and **MySQL**, containerized u
 
 ```bash
 user-api-flask/
-├── app/                        # Flask app code (routes, init)
+├── app/
 │   ├── __init__.py
 │   └── routes.py
-├── db-init/                   # SQL script to initialize the DB
-│   └── init.sql
-├── run.py                     # Entry point for Flask app
-├── requirements.txt           # Python dependencies
-├── Dockerfile                 # Flask container build
-├── docker-compose.yml         # Compose configuration for Flask + MySQL
-├── .env                       # Environment variables for DB connection
+├── run.py
+├── requirements.txt
 └── README.md
 ```
 
 ---
 
+## 🚀 How to Run the Project Locally
+
+> Make sure Python 3.10+ is installed
+
+1. Clone this repository
+2. Create a virtual environment and install dependencies:
+
+```bash
+python -m venv venv
+venv\Scripts\activate  # on Windows
+pip install -r requirements.txt
+```
+
+3. Start the server:
+
+```bash
+python run.py
+```
+
+4. The API will be available at [http://localhost:5000](http://localhost:5000)
+
+---
 ## ⚙️ Environment Variables
 
 These variables are loaded from `.env` and used in the Flask app:
 
 ```env
-MYSQL_HOST=db
+MYSQL_HOST =localhost
 MYSQL_USER=root
 MYSQL_PASSWORD=root
 MYSQL_DB=userdb
 ```
 
 ---
+## ✅ Steps to create the database and table:
 
-## 🚀 How to Run the Project
-
-> **Make sure Docker and Docker Compose are installed**
-
-1. Clone this repo  
-2. Build and start the services:
+1. Access MySQL from the terminal:
 
 ```bash
-docker-compose up --build
+mysql -u root -p
 ```
+2. Create the database and select it:
 
-3. Access the API at [http://localhost:5000](http://localhost:5000)
+```bash
+CREATE DATABASE userdb;
+USE userdb;
+```
+3. Create the database and select it:
 
-4. Database is auto-created with sample users
-
----
-
-## 🗃️ Sample Data
-
-The database initializes with this table and data:
-
-```sql
+```bash
 CREATE TABLE users (
   id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(100),
@@ -84,13 +86,30 @@ INSERT INTO users (name, email) VALUES
   ('Juan', 'juan@example.com'),
   ('Maria', 'maria@example.com');
 ```
+4. Ensure your Flask application is configured to connect to this database by setting the correct values for host, user, password, and database in app/__init__.py.
+---
+
+## 📚 API Endpoints
+
+### 📤 `GET /users`
+Returns a list of users (hardcoded or from SQLite)
+
+### 📥 `POST /users`
+Creates a new user
+
+### ✏️ `PUT /users/<id>`
+Updates an existing user
+
+### ❌ `DELETE /users/<id>`
+Deletes a user
 
 ---
 
-## 🧪 Testing the API
+## 🧠 Educational Value
 
-You can test all endpoints using `curl` from your terminal.
+This project is ideal for:
 
+<<<<<<< HEAD
 ### 📥 Create a user
 
 ```bash
@@ -127,9 +146,16 @@ curl -X DELETE http://localhost:5000/users/1
 - `404` is returned if you try to edit/delete a non-existing user
 - The project uses Flask’s built-in server, suitable for development only
 
+=======
+- Practicing Flask structure
+- Learning REST API principles
+- Building a foundation before adding Docker, CI/CD, etc.
+>>>>>>> e3bf3ea (Improve documentation and reorganize user-api-flask project)
 
 ---
 
 ## 📄 License
 
-This project is open-source and licensed under the MIT License.
+MIT License
+
+
