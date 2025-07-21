@@ -127,14 +127,6 @@ curl -X DELETE http://localhost:5000/users/1
 - `404` is returned if you try to edit/delete a non-existing user
 - The project uses Flask’s built-in server, suitable for development only
 
----
-
-## 🧠 Future Improvements
-
-- Replace with Gunicorn for production deployments
-- Add authentication (JWT or API key)
-- Add pagination to `/users`
-- Add automatic tests using `pytest`
 
 ---
 
