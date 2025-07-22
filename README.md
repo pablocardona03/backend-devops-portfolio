@@ -27,7 +27,7 @@ I'm Pablo César Cardona Rodríguez, an Electronics and Telecommunications Engin
 
 ---
 
-## ⚙️ How to Use This 
+## ⚙️ How to Use This Repo
 
 1. Clone the repository:
 ```bash
