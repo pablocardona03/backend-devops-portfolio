@@ -1,6 +1,6 @@
-from flask import Blueprint, jsonify, request
+from flask import Blueprint, jsonify, request, render_template
 from app import mysql
-import re   
+import re
 
 main = Blueprint('main', __name__)
 
@@ -9,7 +9,7 @@ def is_valid_email(email):
 
 @main.route('/')
 def index():
-    return "Welcome to the User API!"
+    return render_template('index.html')
 
 @main.route('/users', methods=['GET'])
 def get_users():
@@ -17,9 +17,18 @@ def get_users():
     cur.execute("SELECT * FROM users")
     users = cur.fetchall()
     cur.close()
-    
-    result = [{'id': u[0], 'name': u[1], 'email': u[2]} for u in users]
-    return jsonify(result)
+    return render_template('users.html', users=users)
+
+@main.route('/users/<int:user_id>/edit', methods=['GET'], endpoint='edit_user')
+def edit_user(user_id):
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM users WHERE id = %s", (user_id,))
+    user = cur.fetchone()
+    cur.close()
+
+    if user:
+        return render_template('edit_user.html', user=user)
+    return "User not found", 404
 
 @main.route('/users', methods=['POST'])
 def create_user():
@@ -28,7 +37,8 @@ def create_user():
     email = data.get('email')
 
     if not name or not email:
-        return jsonify({'error': 'Missing name or email'}), 400
+        return jsonify({'error': 'Name and email are required'}), 400
+
     if not is_valid_email(email):
         return jsonify({'error': 'Invalid email format'}), 400
 
@@ -37,33 +47,37 @@ def create_user():
         cur.execute("INSERT INTO users (name, email) VALUES (%s, %s)", (name, email))
         mysql.connection.commit()
         cur.close()
-        return jsonify({'message': 'User created successfully'}), 201
+        return jsonify({'message': 'User successfully created'}), 201
     except Exception as e:
-        return jsonify({'error': str(e)}), 500
+        return jsonify({'error': f'Server error: {str(e)}'}), 500
 
-@main.route('/users/<int:user_id>', methods=['PUT'])
+@main.route('/users/<int:user_id>/update', methods=['POST'])
 def update_user(user_id):
-    data = request.get_json()
-    name = data.get('name')
-    email = data.get('email')
+    name = request.form.get('name')
+    email = request.form.get('email')
 
     if not name or not email:
-        return jsonify({'error': 'Missing name or email'}), 400
+        return jsonify({'error': 'Name and email are required'}), 400
+
     if not is_valid_email(email):
         return jsonify({'error': 'Invalid email format'}), 400
 
     try:
         cur = mysql.connection.cursor()
-        cur.execute("SELECT * FROM users WHERE id = %s", (user_id,))
-        user = cur.fetchone()
-        if not user:
-            return jsonify({'error': 'User not found'}), 404
         cur.execute("UPDATE users SET name = %s, email = %s WHERE id = %s", (name, email, user_id))
         mysql.connection.commit()
         cur.close()
-        return jsonify({'message': 'User updated successfully'}), 200
+        return render_template('users.html', users=get_all_users())  # o redirige
     except Exception as e:
-        return jsonify({'error': str(e)}), 500
+        return f"Server error: {str(e)}", 500
+    
+    
+def get_all_users():
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM users")
+    users = cur.fetchall()
+    cur.close()
+    return users   
 
 @main.route('/users/<int:user_id>', methods=['DELETE'])
 def delete_user(user_id):
@@ -71,11 +85,13 @@ def delete_user(user_id):
         cur = mysql.connection.cursor()
         cur.execute("SELECT * FROM users WHERE id = %s", (user_id,))
         user = cur.fetchone()
+
         if not user:
             return jsonify({'error': 'User not found'}), 404
+
         cur.execute("DELETE FROM users WHERE id = %s", (user_id,))
         mysql.connection.commit()
         cur.close()
-        return jsonify({'message': 'User deleted successfully'}), 200
+        return jsonify({'message': 'User successfully deleted'}), 200
     except Exception as e:
-        return jsonify({'error': str(e)}), 500
+        return jsonify({'error': f'Server error: {str(e)}'}), 500
