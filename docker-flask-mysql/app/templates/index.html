@@ -1,74 +1,15 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Pablo industries</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+    <meta charset="UTF-8">
+    <title>Flask User App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-  <header>
     <div class="container">
-      <h1>Pablo industries</h1>
-      <nav>
-        <a href="#servicios">ervicios</a>
-        <a href="#nosotros">Nosotros</a>
-        <a href="#contacto">Contacto</a>
-      </nav>
+        <h1>Welcome to the User Management App</h1>
+        <p>This application allows you to create, read, update, and delete users using Flask and MySQL.</p>
+        <a href="{{ url_for('main.get_users') }}" class="btn">Go to Users</a>
     </div>
-  </header>
-
-  <section class="hero">
-    <div class="container">
-      <h2>Soluciones empresariales a tu medida</h2>
-      <p>Profesionalismo, experiencia y compromiso en cada proyecto.</p>
-      <a href="#contacto" class="btn">Contáctanos</a>
-    </div>
-  </section>
-
-  <section id="servicios" class="section">
-    <div class="container">
-      <h2>Nuestros Servicios</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>Consultoría</h3>
-          <p>Asesoría estratégica para potenciar tu negocio.</p>
-        </div>
-        <div class="card">
-          <h3>Tecnología</h3>
-          <p>Soluciones digitales modernas y eficientes.</p>
-        </div>
-        <div class="card">
-          <h3>Capacitación</h3>
-          <p>Formación continua para tu equipo de trabajo.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="nosotros" class="section light">
-    <div class="container">
-      <h2>¿Quiénes Somos?</h2>
-      <p>Somos un equipo multidisciplinario enfocado en ofrecer soluciones integrales y personalizadas para empresas que buscan crecer y adaptarse a un entorno cambiante.</p>
-    </div>
-  </section>
-
-  <section id="contacto" class="section">
-    <div class="container">
-      <h2>Contáctanos</h2>
-      <form>
-        <input type="text" placeholder="Nombre" required>
-        <input type="email" placeholder="Correo electrónico" required>
-        <textarea placeholder="Mensaje" required></textarea>
-        <button type="submit">Enviar</button>
-      </form>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Pablo industries. Todos los derechos reservados.</p>
-    </div>
-  </footer>
 </body>
 </html>
