@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>User List</h1>
+
+        <form id="user-form">
+            <div class="form-row">
+                <input type="text" id="name" placeholder="Name" required>
+                <input type="email" id="email" placeholder="Email" required>
+            </div>
+            <button type="submit" class="btn">Create User</button>
+        </form>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="user-table">
+                {% for user in users %}
+                <tr data-id="{{ user[0] }}">
+                    <td>{{ user[0] }}</td>
+                    <td contenteditable="true">{{ user[1] }}</td>
+                    <td contenteditable="true">{{ user[2] }}</td>
+                    <td>
+                        <a class="btn" href="{{ url_for('main.edit_user', user_id=user[0]) }}">Update</a>
+                        <button class="btn" onclick="deleteUser('{{ user[0] }}')">Delete</button>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="{{ url_for('main.index') }}" class="btn">Back to Home</a>
+    </div>
+
+    <script>
+        document.getElementById('user-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+
+            const res = await fetch('/users', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, email })
+            });
+
+            const result = await res.json();
+            alert(result.message || result.error);
+            if (res.ok) location.reload();
+        });
+
+        async function updateUser(id) {
+            const row = document.querySelector(`tr[data-id='${id}']`);
+            const name = row.children[1].innerText.trim();
+            const email = row.children[2].innerText.trim();
+
+            const res = await fetch(`/users/${id}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, email })
+            });
+
+            const result = await res.json();
+            alert(result.message || result.error);
+            if (res.ok) location.reload();
+        }
+
+        async function deleteUser(id) {
+            const confirmDelete = confirm("Are you sure you want to delete this user?");
+            if (!confirmDelete) return;
+
+            const res = await fetch(`/users/${id}`, {
+                method: 'DELETE'
+            });
+
+            const result = await res.json();
+            alert(result.message || result.error);
+            if (res.ok) location.reload();
+        }
+    </script>
+</body>
+</html>
