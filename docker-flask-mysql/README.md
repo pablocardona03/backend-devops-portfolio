@@ -1,39 +1,48 @@
-# User API with Flask, MySQL and Docker
+# User Management App with Flask, MySQL, and Docker
 
-This is a full CRUD REST API built with **Flask** and **MySQL**, containerized using **Docker** and **Docker Compose**. It demonstrates professional practices such as:
-
-- Modular Flask application structure
-- Input validation
-- Docker-based multi-service architecture
-- Database auto-initialization with sample data
+This project is a full-stack user management application built with **Flask**, **MySQL**, and **Docker**, featuring a clean frontend UI integrated with backend CRUD functionality. It demonstrates professional software development practices and is ready for deployment or further extension.
 
 ---
 
-## 📦 Tech Stack
+## 🚀 Features
+
+- Full CRUD operations with web interface (create, read, update, delete users)
+- Input validation with email format check
+- Modular Flask architecture using Blueprints
+- Dockerized setup with Docker Compose
+- Auto-initialization of MySQL database with sample data
+- Responsive frontend using HTML, CSS and Jinja2 templates
+
+---
+
+## 🛠 Tech Stack
 
 - Python 3.10
 - Flask 3.1.1
 - MySQL 8.0
+- HTML5, CSS3, Jinja2
 - Docker & Docker Compose
-- SQL for DB bootstrap
-- Manual testing with `curl` or Postman
 
 ---
 
 ## 📁 Project Structure
 
 ```bash
-user-api-flask/
-├── app/                        # Flask app code (routes, init)
-│   ├── __init__.py
-│   └── routes.py
-├── db-init/                   # SQL script to initialize the DB
-│   └── init.sql
-├── run.py                     # Entry point for Flask app
+user-management-app/
+├── app/
+│   ├── __init__.py            # App factory and MySQL config
+│   ├── routes.py              # Main routes and logic
+│   └── templates/             # Frontend HTML templates
+│       ├── index.html
+│       ├── users.html
+│       └── edit_user.html
+├── db-init/
+│   └── init.sql               # SQL script for DB bootstrap
+├── run.py                     # App entry point
+├── Dockerfile                 # Flask app container
+├── docker-compose.yml         # Services: Flask + MySQL
 ├── requirements.txt           # Python dependencies
-├── Dockerfile                 # Flask container build
-├── docker-compose.yml         # Compose configuration for Flask + MySQL
-├── .env                       # Environment variables for DB connection
+├── .env                       # Environment variables for DB
 └── README.md
 ```
 
@@ -41,7 +50,7 @@ user-api-flask/
 
 ## ⚙️ Environment Variables
 
-These variables are loaded from `.env` and used in the Flask app:
+Defined in `.env` file and used by Flask and MySQL containers:
 
 ```env
 MYSQL_HOST=db
@@ -52,26 +61,32 @@ MYSQL_DB=userdb
 
 ---
 
-## 🚀 How to Run the Project
+## 🧪 How to Run the App
 
-> **Make sure Docker and Docker Compose are installed**
+> Make sure Docker and Docker Compose are installed on your system
 
-1. Clone this repo  
-2. Build and start the services:
+1. Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/user-management-app.git
+cd user-management-app
+```
+
+2. Build and run the services:
 
 ```bash
 docker-compose up --build
 ```
 
-3. Access the API at [http://localhost:5000](http://localhost:5000)
+3. Open your browser and go to: [http://localhost:5000](http://localhost:5000)
 
-4. Database is auto-created with sample users
+4. You can now create, view, edit, and delete users from the web interface.
 
 ---
 
 ## 🗃️ Sample Data
 
-The database initializes with this table and data:
+The database is auto-initialized with the following structure and users:
 
 ```sql
 CREATE TABLE users (
@@ -87,49 +102,14 @@ INSERT INTO users (name, email) VALUES
 
 ---
 
-## 🧪 Testing the API
-
-You can test all endpoints using `curl` from your terminal.
-
-### 📥 Create a user
-
-```bash
-curl -X POST http://localhost:5000/users \
-  -H "Content-Type: application/json" \
-  -d '{"name": "Pablo", "email": "pablo@example.com"}'
-```
-
-### 📤 Get all users
-
-```bash
-curl http://localhost:5000/users
-```
-
-### ✏️ Update a user
-
-```bash
-curl -X PUT http://localhost:5000/users/1 \
-  -H "Content-Type: application/json" \
-  -d '{"name": "Updated Juan", "email": "juan@updated.com"}'
-```
-
-### ❌ Delete a user
-
-```bash
-curl -X DELETE http://localhost:5000/users/1
-```
-
----
-
 ## 📌 Notes
 
-- The API validates email format using regex
-- `404` is returned if you try to edit/delete a non-existing user
-- The project uses Flask’s built-in server, suitable for development only
-
+- Email input is validated using regex on the backend.
+- Proper error messages are shown if fields are missing or incorrect.
+- Page redirection and form submission are handled seamlessly using Flask.
 
 ---
 
-## 📄 License
+## 🪪 License
 
 This project is open-source and licensed under the MIT License.
