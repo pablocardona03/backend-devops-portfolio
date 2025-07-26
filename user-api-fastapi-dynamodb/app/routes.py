@@ -9,7 +9,7 @@ router = APIRouter()
 
 @router.post("/users", response_model=User, status_code=201)
 def create_user(user: User):
-    user.id = str(uuid4())  
+    user.id = str(uuid4()) 
     table.put_item(Item=user.dict())
     return user
 
