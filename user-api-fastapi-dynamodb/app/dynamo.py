@@ -1,8 +1,8 @@
-import os
 import boto3
 from dotenv import load_dotenv
+import os
 
-load_dotenv()  
+load_dotenv()
 
 dynamodb = boto3.resource(
     'dynamodb',
@@ -11,4 +11,4 @@ dynamodb = boto3.resource(
     aws_secret_access_key=os.getenv("AWS_SECRET_ACCESS_KEY")
 )
 
-table = dynamodb.Table('Users')
+table = dynamodb.Table('users')
