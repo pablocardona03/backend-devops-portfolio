@@ -1,42 +1,41 @@
-
 # 🧩 Backend & DevOps Portfolio – Pablo Cardona
 
-¡Bienvenido a mi portafolio técnico! Soy ingeniero en electrónica y telecomunicaciones, enfocado en desarrollo backend con Python y automatización de infraestructura. Este repositorio agrupa todos mis proyectos personales, prácticos y de aprendizaje, orientados al desarrollo de APIs, despliegue, infraestructura como código y buenas prácticas de desarrollo moderno.
+Welcome to my technical portfolio! I’m an electronics and telecommunications engineer focused on backend development with Python and infrastructure automation. This repository brings together all my personal, practical, and learning projects, centered around API development, deployment, infrastructure as code, and modern development best practices.
 
 ---
 
-## 🚀 Tecnologías y herramientas que utilizo
+## 🚀 Technologies and Tools I Use
 
-- **Lenguaje principal:** Python
-- **Frameworks:** Flask, FastAPI (en exploración)
-- **Contenedores:** Docker
-- **Bases de datos:** PostgreSQL, SQLite, MongoDB (simulada)
-- **DevOps:** Git, GitHub, AWS (en formación), Terraform (iniciando)
-- **Otros:** Pandas, TensorFlow (proyectos académicos), GitHub Actions (básico)
+- **Main language:** Python
+- **Frameworks:** Flask, FastAPI (exploring)
+- **Containers:** Docker
+- **Databases:** PostgreSQL, SQLite, MongoDB (simulated)
+- **DevOps:** Git, GitHub, AWS (in progress), Terraform (beginner)
+- **Others:** Pandas, TensorFlow (academic projects), GitHub Actions (basic)
 
 ---
 
-## 📂 Proyectos agrupados
+## 📂 Grouped Projects
 
-| Proyecto | Descripción |
+| Project | Description |
 |---------|-------------|
-| [`flask-user-api`](./flask-user-api) | API básica para gestión de usuarios usando Flask y SQLite |
-| [`flask-user-api-dockerized`](./flask-user-api-dockerized) | Versión contenerizada del proyecto anterior usando Docker |
-| [`fastapi-user-api`](./fastapi-user-api) | API mínima usando FastAPI con validación y documentación automática |
-| [`multi-db-user-api`](./multi-db-user-api) | API conectada a PostgreSQL y MongoDB simulada para manejo híbrido de datos |
-| [`terraform-aws-lab`](./terraform-aws-lab) | Laboratorio inicial de infraestructura como código con Terraform |
-| [`devops-journal`](./devops-journal) | Bitácora técnica de conceptos, herramientas y prácticas en DevOps y AWS |
-| [`ml-colab-experiments`](./ml-colab-experiments) | Proyectos de machine learning académicos usando TensorFlow y Pandas |
+| [`flask-user-api`](./flask-user-api) | Basic user management API using Flask and SQLite |
+| [`flask-user-api-dockerized`](./flask-user-api-dockerized) | Containerized version of the previous project using Docker |
+| [`fastapi-user-api`](./fastapi-user-api) | Minimal API using FastAPI with validation and auto documentation |
+| [`multi-db-user-api`](./multi-db-user-api) | API connected to PostgreSQL and simulated MongoDB for hybrid data handling |
+| [`terraform-aws-lab`](./terraform-aws-lab) | Initial infrastructure as code lab using Terraform |
+| [`devops-journal`](./devops-journal) | Technical journal of concepts, tools, and practices in DevOps and AWS |
+| [`ml-colab-experiments`](./ml-colab-experiments) | Academic machine learning projects using TensorFlow and Pandas |
 
 ---
 
-## 🎯 Objetivo de este portafolio
+## 🎯 Portfolio Goal
 
-Construir un perfil sólido y profesional como desarrollador backend con enfoque en infraestructura, automatización y despliegue moderno. Cada proyecto refleja una etapa de aprendizaje técnico con orientación práctica y visión de producción.
+Build a solid and professional profile as a backend developer focused on infrastructure, automation, and modern deployment. Each project reflects a stage of technical learning with practical orientation and production vision.
 
 ---
 
-## 📬 Contacto
+## 📬 Contact
 
 - [LinkedIn](https://www.linkedin.com/in/pabloccardona)
 - [GitHub](https://github.com/pablocardona03)
