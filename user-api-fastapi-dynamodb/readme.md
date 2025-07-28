@@ -1,89 +1,88 @@
-
 # 🧩 User API - FastAPI + DynamoDB
 
-Una API REST simple para gestionar usuarios utilizando **FastAPI** y **DynamoDB** como base de datos NoSQL.
+A simple REST API to manage users using **FastAPI** and **DynamoDB** as a NoSQL database.
 
-## 🚀 Tecnologías
+## 🚀 Technologies
 
-- **FastAPI** para el framework web
-- **DynamoDB** (AWS) como base de datos NoSQL
-- **Pydantic v2** para validación de datos
-- **Uvicorn** como servidor ASGI
-- **Boto3** para conectar con AWS DynamoDB
-- **UUID4** para generación automática de ID únicos
-- **dotenv** para variables de entorno
+- **FastAPI** for the web framework  
+- **DynamoDB** (AWS) as NoSQL database  
+- **Pydantic v2** for data validation  
+- **Uvicorn** as ASGI server  
+- **Boto3** to connect with AWS DynamoDB  
+- **UUID4** for automatic unique ID generation  
+- **dotenv** for environment variables
 
-## 🗂️ Estructura del proyecto
+## 🗂️ Project Structure
 
 ```
 user-api-fastapi-dynamodb/
 ├── app/
-│   ├── main.py         # Punto de entrada de la app
-│   ├── routes.py       # Rutas de usuario (CRUD)
-│   ├── models.py       # Esquema de datos con Pydantic
-│   └── dynamo.py       # Conexión con DynamoDB
-├── .env                # Variables de entorno (no subir a git)
-├── create_table.py     # Script opcional para crear tabla en DynamoDB
-├── requirements.txt    # Dependencias del proyecto
-└── README.md           # Este archivo
+│   ├── main.py         # App entry point
+│   ├── routes.py       # User routes (CRUD)
+│   ├── models.py       # Data schema with Pydantic
+│   └── dynamo.py       # DynamoDB connection
+├── .env                # Environment variables (don't upload to git)
+├── create_table.py     # Optional script to create table in DynamoDB
+├── requirements.txt    # Project dependencies
+└── README.md           # This file
 ```
 
-## ⚙️ Instalación
+## ⚙️ Installation
 
 ```bash
-git clone https://github.com/tu-usuario/user-api-fastapi-dynamodb.git
+git clone https://github.com/your-user/user-api-fastapi-dynamodb.git
 cd user-api-fastapi-dynamodb
 
 python -m venv venv
-source venv/bin/activate  # o venv\Scripts\activate en Windows
+source venv/bin/activate  # or venv\Scripts\activate on Windows
 
 pip install -r requirements.txt
 ```
 
-## 🔐 Configura tus variables de entorno
+## 🔐 Set your environment variables
 
-Crea un archivo `.env` con tu configuración de AWS:
+Create a `.env` file with your AWS config:
 
 ```
-AWS_ACCESS_KEY_ID=TU_ACCESS_KEY
-AWS_SECRET_ACCESS_KEY=TU_SECRET_KEY
+AWS_ACCESS_KEY_ID=YOUR_ACCESS_KEY
+AWS_SECRET_ACCESS_KEY=YOUR_SECRET_KEY
 AWS_REGION=us-east-1
 ```
 
-## ▶️ Ejecución
+## ▶️ Run
 
 ```bash
 uvicorn app.main:app --reload
 ```
 
-Abre Swagger en: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+Open Swagger at: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
 
-## 🔁 Endpoints disponibles
+## 🔁 Available Endpoints
 
-| Método | Ruta             | Descripción                  |
-|--------|------------------|------------------------------|
-| POST   | /users           | Crear un nuevo usuario       |
-| GET    | /users/{id}      | Obtener usuario por ID       |
-| GET    | /users           | Listar todos los usuarios    |
-| PUT    | /users/{id}      | Actualizar usuario existente |
-| DELETE | /users/{id}      | Eliminar usuario por ID      |
+| Method | Path            | Description                   |
+|--------|------------------|-------------------------------|
+| POST   | /users           | Create a new user             |
+| GET    | /users/{id}      | Get user by ID                |
+| GET    | /users           | List all users                |
+| PUT    | /users/{id}      | Update existing user          |
+| DELETE | /users/{id}      | Delete user by ID             |
 
-## 🧪 Ejemplo CURL para crear un usuario
+## 🧪 CURL Example to Create a User
 
 ```bash
 curl -X POST http://127.0.0.1:8000/users -H "Content-Type: application/json" -d "{\"name\": \"Juan Pérez\", \"email\": \"juan@example.com\"}"
 ```
 
-## ⚠️ Notas
+## ⚠️ Notes
 
-- Ejecuta `create_table.py` solo si necesitas crear la tabla desde código.
-- La validación de email se realiza usando `pydantic[email]`.
+- Run `create_table.py` only if you need to create the table from code.
+- Email validation is performed using `pydantic[email]`.
 
-## 🧑 Autor
+## 🧑 Author
 
 **Pablo César Cardona Rodríguez**  
-Desarrollador Backend & DevOps Enthusiast
+Backend Developer & DevOps Enthusiast
 
 ---
 
-Proyecto desarrollado como parte de portafolio profesional.
+Project developed as part of professional portfolio.
