@@ -1,35 +1,44 @@
-# 🚀 Backend, DevOps, CI/CD, IoT & Cybersecurity Projects
+# 🧩 Backend & DevOps Portfolio – Pablo Cardona
 
-Welcome! This repository is a collection of practical projects that showcase my skills in **backend development**, **DevOps practices**, **containerization**, **continuous integration/deployment (CI/CD)**, **IoT simulation**, and **basic cybersecurity analysis**.  
-
-Each project is designed to demonstrate real-world applications using modern tools such as Flask, Docker, Jenkins, Ansible, and Linux-based environments. All code is containerized, tested, and well-documented.
-
-## 👨‍💻 About Me
-
-I'm Pablo César Cardona Rodríguez, an Electronics and Telecommunications Engineer with a specialization in Cybersecurity. I'm passionate about building reliable backend systems, automating infrastructure, and learning advanced DevOps practices. This repository reflects my learning journey and serves as my technical portfolio.
+Welcome to my technical portfolio! I’m an electronics and telecommunications engineer focused on backend development with Python and infrastructure automation. This repository brings together all my personal, practical, and learning projects, centered around API development, deployment, infrastructure as code, and modern development best practices.
 
 ---
 
-## 📁 Project Index
+## 🚀 Technologies and Tools I Use
 
-| Folder                     | Project Description |
-|---------------------------|---------------------|
-| `/user-api-flask`         | Basic RESTful API for user management using Flask and SQLite |
-| `/docker-flask-mysql`     | Flask API with MySQL persistence, containerized using Docker |
-| `/iot-ubidots-simulator`  | IoT simulation sending data to Ubidots using Python scripts |
-| `/jenkins-ci-pipeline`    | CI/CD pipeline using Jenkins and Docker to automate testing and build |
-| `/ansible-infra`          | Infrastructure as Code setup using Ansible to deploy LAMP/Flask stack |
-| `/docker-microservices-compose` | Simulated microservices using Flask, Redis, and Nginx with Docker Compose |
-| `/network-analysis-wireshark` | Capture and analysis of API network traffic using Wireshark and curl |
-| `/devsecops-pipeline`     | DevSecOps pipeline integrating Trivy for container vulnerability scanning |
-| `/vps-deployment`         | Deployment of Flask app on a VPS with HTTPS (Nginx + Certbot) |
-| `/kubernetes-microservice` (optional) | Deploy a containerized microservice architecture on Kubernetes (Minikube) |
+- **Main language:** Python
+- **Frameworks:** Flask, FastAPI (exploring)
+- **Containers:** Docker
+- **Databases:** PostgreSQL, SQLite, MongoDB (simulated)
+- **DevOps:** Git, GitHub, AWS (in progress), Terraform (beginner)
+- **Others:** Pandas, TensorFlow (academic projects), GitHub Actions (basic)
 
 ---
 
-## ⚙️ How to Use This Repo
+## 📂 Grouped Projects
 
-1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/backend-iot-projects.git
-cd backend-iot-projects
+| Project | Description |
+|---------|-------------|
+| [`user-api-flask`](./user-api-flask) | Basic user management API using Flask and SQLite |
+| [`docker-flask-mysql`](./docker-flask-mysql) | Containerized version of the previous project using Docker |
+| [`user-api-fastapi-dynamodb`](./user-api-fastapi-dynamodb) | Minimal API using FastAPI with validation and auto documentation |
+| [`multi-db-user-api`](./multi-db-user-api) | API connected to PostgreSQL and simulated MongoDB for hybrid data handling |
+| [`terraform-aws-lab`](./terraform-aws-lab) | Initial infrastructure as code lab using Terraform |
+| [`devops-journal`](./devops-journal) | Technical journal of concepts, tools, and practices in DevOps and AWS |
+| [`ml-colab-experiments`](./ml-colab-experiments) | Academic machine learning projects using TensorFlow and Pandas |
+
+---
+
+## 🎯 Portfolio Goal
+
+Build a solid and professional profile as a backend developer focused on infrastructure, automation, and modern deployment. Each project reflects a stage of technical learning with practical orientation and production vision.
+
+---
+
+## 📬 Contact
+
+- [LinkedIn](https://www.linkedin.com/in/pabloccardona)
+- [GitHub](https://github.com/pablocardona03)
+- Email: pabloccardona@gmail.com
+
+---
