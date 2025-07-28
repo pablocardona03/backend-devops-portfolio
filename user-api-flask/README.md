@@ -48,6 +48,7 @@ python run.py
 4. The API will be available at [http://localhost:5000](http://localhost:5000)
 
 ---
+
 ## ⚙️ Environment Variables
 
 These variables are loaded from `.env` and used in the Flask app:
@@ -60,6 +61,7 @@ MYSQL_DB=userdb
 ```
 
 ---
+
 ## ✅ Steps to create the database and table:
 
 1. Access MySQL from the terminal:
@@ -67,13 +69,15 @@ MYSQL_DB=userdb
 ```bash
 mysql -u root -p
 ```
+
 2. Create the database and select it:
 
 ```bash
 CREATE DATABASE userdb;
 USE userdb;
 ```
-3. Create the database and select it:
+
+3. Create the users table and insert example data:
 
 ```bash
 CREATE TABLE users (
@@ -86,7 +90,9 @@ INSERT INTO users (name, email) VALUES
   ('Juan', 'juan@example.com'),
   ('Maria', 'maria@example.com');
 ```
-4. Ensure your Flask application is configured to connect to this database by setting the correct values for host, user, password, and database in app/__init__.py.
+
+4. Ensure your Flask application is configured to connect to this database by setting the correct values for host, user, password, and database in `app/__init__.py`.
+
 ---
 
 ## 📚 API Endpoints
@@ -109,13 +115,18 @@ Deletes a user
 
 This project is ideal for:
 
-<<<<<<< HEAD
+- Practicing Flask structure
+- Learning REST API principles
+- Building a foundation before adding Docker, CI/CD, etc.
+
+---
+
+## 📦 CURL Examples
+
 ### 📥 Create a user
 
 ```bash
-curl -X POST http://localhost:5000/users \
-  -H "Content-Type: application/json" \
-  -d '{"name": "Pablo", "email": "pablo@example.com"}'
+curl -X POST http://localhost:5000/users   -H "Content-Type: application/json"   -d '{"name": "Pablo", "email": "pablo@example.com"}'
 ```
 
 ### 📤 Get all users
@@ -127,9 +138,7 @@ curl http://localhost:5000/users
 ### ✏️ Update a user
 
 ```bash
-curl -X PUT http://localhost:5000/users/1 \
-  -H "Content-Type: application/json" \
-  -d '{"name": "Updated Juan", "email": "juan@updated.com"}'
+curl -X PUT http://localhost:5000/users/1   -H "Content-Type: application/json"   -d '{"name": "Updated Juan", "email": "juan@updated.com"}'
 ```
 
 ### ❌ Delete a user
@@ -146,16 +155,8 @@ curl -X DELETE http://localhost:5000/users/1
 - `404` is returned if you try to edit/delete a non-existing user
 - The project uses Flask’s built-in server, suitable for development only
 
-=======
-- Practicing Flask structure
-- Learning REST API principles
-- Building a foundation before adding Docker, CI/CD, etc.
->>>>>>> e3bf3ea (Improve documentation and reorganize user-api-flask project)
-
 ---
 
 ## 📄 License
 
 MIT License
-
-
