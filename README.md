@@ -19,9 +19,9 @@ Welcome to my technical portfolio! I’m an electronics and telecommunications e
 
 | Project | Description |
 |---------|-------------|
-| [`flask-user-api`](./flask-user-api) | Basic user management API using Flask and SQLite |
-| [`flask-user-api-dockerized`](./flask-user-api-dockerized) | Containerized version of the previous project using Docker |
-| [`fastapi-user-api`](./fastapi-user-api) | Minimal API using FastAPI with validation and auto documentation |
+| [`user-api-flask`](./user-api-flask) | Basic user management API using Flask and SQLite |
+| [`docker-flask-mysql`](./docker-flask-mysql) | Containerized version of the previous project using Docker |
+| [`user-api-fastapi-dynamodb`](./user-api-fastapi-dynamodb) | Minimal API using FastAPI with validation and auto documentation |
 | [`multi-db-user-api`](./multi-db-user-api) | API connected to PostgreSQL and simulated MongoDB for hybrid data handling |
 | [`terraform-aws-lab`](./terraform-aws-lab) | Initial infrastructure as code lab using Terraform |
 | [`devops-journal`](./devops-journal) | Technical journal of concepts, tools, and practices in DevOps and AWS |
