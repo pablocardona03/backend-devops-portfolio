@@ -1,5 +1,19 @@
 # 🧩 Backend & DevOps Portfolio – Pablo Cardona
 
+Welcome to my technical portfolio! I’m an electronics and telecommunications engineer focused on backend development with Python and infrastructure automation. This repository brings together all my personal, practical, and learning projects, centered around API development, deployment, infrastructure as code, and modern development best practices.
+
+---
+
+## 🚀 Technologies and Tools I Use
+
+- **Main language:** Python
+- **Frameworks:** Flask, FastAPI (exploring)
+- **Containers:** Docker
+- **Databases:** PostgreSQL, SQLite, MongoDB (simulated)
+- **DevOps:** Git, GitHub, AWS (in progress), Terraform (beginner)
+- **Others:** Pandas, TensorFlow (academic projects), GitHub Actions (basic)
+# 🧩 Backend & DevOps Portfolio – Pablo Cardona
+
 ¡Bienvenido a mi portafolio técnico! Soy ingeniero en electrónica y telecomunicaciones, enfocado en desarrollo backend con Python y automatización de infraestructura. Este repositorio agrupa todos mis proyectos personales, prácticos y de aprendizaje, orientados al desarrollo de APIs, despliegue, infraestructura como código y buenas prácticas de desarrollo moderno.
 
 ---
