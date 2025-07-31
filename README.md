@@ -19,13 +19,12 @@ Welcome to my technical portfolio! I’m an electronics and telecommunications e
 
 | Project | Description |
 |---------|-------------|
-| [`user-api-flask`](./user-api-flask) | Basic user management API using Flask and SQLite |
-| [`docker-flask-mysql`](./docker-flask-mysql) | Containerized version of the previous project using Docker |
-| [`user-api-fastapi-dynamodb`](./user-api-fastapi-dynamodb) | Minimal API using FastAPI with validation and auto documentation |
-| [`multi-db-user-api`](./multi-db-user-api) | API connected to PostgreSQL and simulated MongoDB for hybrid data handling |
-| [`terraform-aws-lab`](./terraform-aws-lab) | Initial infrastructure as code lab using Terraform |
-| [`devops-journal`](./devops-journal) | Technical journal of concepts, tools, and practices in DevOps and AWS |
-| [`ml-colab-experiments`](./ml-colab-experiments) | Academic machine learning projects using TensorFlow and Pandas |
+| [`user-api-flask`](./user-api-flask) | Basic user management API using Flask and SQLite (DONE)|
+| [`docker-flask-mysql`](./docker-flask-mysql) | Containerized version of the previous project using Docker (DONE)|
+| [`user-api-fastapi-dynamodb`](./user-api-fastapi-dynamodb) | Minimal API using FastAPI with validation and auto documentation (DONE)|
+| [`multi-db-user-api`](./multi-db-user-api) | API connected to PostgreSQL and simulated MongoDB for hybrid data handling (PROGRESS)|
+| [`terraform-aws-lab`](./terraform-aws-lab) | Initial infrastructure as code lab using Terraform (WAITING)|
+| [`devops-journal`](./devops-journal) | Technical journal of concepts, tools, and practices in DevOps and AWS (WAITING)|
 
 ---
 
