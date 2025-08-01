@@ -1,8 +1,8 @@
 from motor.motor_asyncio import AsyncIOMotorClient
-import os
+from pymongo.collection import Collection
 
-MONGO_URL = os.getenv("MONGO_URL", "mongodb://mongo:27017")
-
+MONGO_URL = "mongodb://mongo:27017"
 client = AsyncIOMotorClient(MONGO_URL)
-db = client["logs_db"]
-logs_collection = db["logs"]
+
+db = client["log_db"]
+logs_collection: Collection = db["logs"]
