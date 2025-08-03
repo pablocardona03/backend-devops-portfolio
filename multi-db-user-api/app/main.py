@@ -5,6 +5,9 @@ from app.db.postgres import Base, engine
 import time
 import psycopg2
 from psycopg2 import OperationalError
+from app.routes import auth_routes
+
+
 
 def wait_for_postgres():
     print("🔄 Waiting for PostgreSQL to be ready...")
@@ -48,7 +51,7 @@ app.add_middleware(
 
 app.include_router(user_routes.router, prefix="/users", tags=["Users"])
 app.include_router(log_routes.router, prefix="/logs", tags=["Logs"])
-
+app.include_router(auth_routes.router, prefix="/auth", tags=["Auth"])
 
 @app.get("/", tags=["Root"])
 def read_root():
