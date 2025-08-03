@@ -13,10 +13,9 @@ async def get_logs():
     logs_cursor = logs_collection.find({})
     logs = await logs_cursor.to_list(length=100)
 
-    # Convertir ObjectId a str o eliminarlo
     cleaned_logs = []
     for log in logs:
-        log.pop("_id", None)  # Elimina _id si está
+        log.pop("_id", None) 
         cleaned_logs.append(log)
     
     return cleaned_logs

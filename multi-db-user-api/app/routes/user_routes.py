@@ -7,7 +7,7 @@ from app.schemas.user_schema import UserCreate, UserUpdate, UserResponse
 from app.crud import user_crud
 from app.db.postgres import get_db
 from app.utils.jwt import get_current_user
-from app.models.auth_model import AuthUser  # <- importante para tipar el usuario autenticado
+from app.models.auth_model import AuthUser  
 
 router = APIRouter()
 
